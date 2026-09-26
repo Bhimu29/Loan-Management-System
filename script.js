@@ -252,13 +252,15 @@ async function loadApplications() {
         }
 
 
-        // Display applications
+       // Display applications
+const formattedData = data.data
+    .trim()
+    .replace(/\r?\n\s*\r?\n+/g, "\n");
 
-        container.innerHTML =
-            "<pre>" +
-            data.data +
-            "</pre>";
-
+container.innerHTML =
+    "<pre>" +
+    formattedData +
+    "</pre>";
     }
 
     catch (error) {
