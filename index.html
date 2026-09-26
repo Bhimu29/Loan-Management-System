@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loan Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">Loan<span>Manage</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#calculator">EMI Calculator</a>
+            <a href="#apply">Apply Loan</a>
+            <a href="#applications">Applications</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">SMART • SIMPLE • SECURE</p>
+
+            <h1>
+                Loan Management
+                <br>
+                <span>Made Simple</span>
+            </h1>
+
+            <p>
+                Manage loans, customers, EMI calculations and
+                loan applications using one simple system.
+            </p>
+
+            <a href="#apply" class="btn">
+                Apply for a Loan
+            </a>
+
+        </div>
+
+
+        <div class="loan-box">
+
+            <h2>Loan Overview</h2>
+
+            <div class="stat">
+                <span>Active Loans</span>
+                <strong>128</strong>
+            </div>
+
+            <div class="stat">
+                <span>Applications</span>
+                <strong>42</strong>
+            </div>
+
+            <div class="stat">
+                <span>Approved</span>
+                <strong>35</strong>
+            </div>
+
+            <div class="stat">
+                <span>Pending</span>
+                <strong>7</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+
+        <h2>Our Services</h2>
+
+        <p class="section-text">
+            Our Loan Management System provides the following services.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">👤</div>
+
+                <h3>Customer Management</h3>
+
+                <p>
+                    Store and manage customer details,
+                    contact information and loan records.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">📄</div>
+
+                <h3>Loan Applications</h3>
+
+                <p>
+                    Customers can submit loan applications
+                    and track their application status.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">💰</div>
+
+                <h3>EMI Management</h3>
+
+                <p>
+                    Calculate monthly EMI and view
+                    loan repayment information.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">📊</div>
+
+                <h3>Loan Status</h3>
+
+                <p>
+                    Check whether a loan application is
+                    pending, approved or rejected.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EMI Calculator -->
+    <section id="calculator" class="section calculator-section">
+
+        <h2>EMI Calculator</h2>
+
+        <p class="section-text">
+            Calculate your estimated monthly loan installment.
+        </p>
+
+
+        <div class="calculator">
+            <label>
+    Loan Type
+
+    <select id="loanType">
+
+        <option value="personal">
+            Personal Loan
+        </option>
+
+        <option value="education">
+            Education Loan
+        </option>
+
+        <option value="home">
+            Home Loan
+        </option>
+
+        <option value="vehicle">
+            Vehicle Loan
+        </option>
+
+    </select>
+</label>
+            <label>
+                Loan Amount (₹)
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter loan amount"
+                >
+            </label>
+
+
+            <label>
+                Annual Interest Rate (%)
+
+                <input
+                    type="number"
+                    id="interest"
+                    placeholder="Example: 8.5"
+                    step="0.1"
+                >
+            </label>
+
+
+            <label>
+                Loan Tenure (Years)
+
+                <input
+                    type="number"
+                    id="years"
+                    placeholder="Example: 5"
+                >
+            </label>
+
+
+            <button onclick="calculateEMI()" class="btn">
+                Calculate EMI
+            </button>
+
+
+            <div id="result" class="result">
+                Monthly EMI: ₹0
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Loan Application -->
+    <section id="apply" class="section">
+
+        <h2>Apply for a Loan</h2>
+
+        <p class="section-text">
+            Fill in the details below to submit your loan application.
+        </p>
+
+
+        <form id="loanForm">
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+
+                <div>
+                    <label>Mobile Number</label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter mobile number"
+                        required
+                    >
+                </div>
+
+
+                <div>
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email"
+                        required
+                    >
+                </div>
+
+
+                <div>
+                    <label>Loan Type</label>
+
+                    <select id="applicationLoanType" required>
+
+                        <option value="">
+                            Select Loan Type
+                        </option>
+
+                        <option value="personal">
+                            Personal Loan
+                        </option>
+
+                        <option value="education">
+                            Education Loan
+                        </option>
+
+                        <option value="home">
+                            Home Loan
+                        </option>
+
+                        <option value="vehicle">
+                            Vehicle Loan
+                        </option>
+
+
+                    </select>
+
+                </div>
+
+
+                <div>
+                    <label>Loan Amount</label>
+
+                    <input
+                        type="number"
+                        id="applicationAmount"
+                        placeholder="Enter loan amount"
+                        required
+                    >
+                </div>
+
+
+                <div>
+                    <label>Loan Tenure</label>
+
+                    <input
+                        type="number"
+                        id="applicationYears"
+                        placeholder="Years"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <label>Address</label>
+
+            <textarea
+                id="address"
+                placeholder="Enter your address"
+                rows="4"
+                required
+            ></textarea>
+
+
+            <button type="submit" class="btn">
+                Submit Application
+            </button>
+
+
+            <p id="message"></p>
+
+        </form>
+
+    </section>
+
+
+     <!-- Applications Dashboard -->
+
+<section id="applications" class="section">
+
+    <h2>Loan Applications</h2>
+
+    <p class="section-text">
+        View submitted loan applications.
+    </p>
+
+    <button onclick="loadApplications()" class="btn">
+        View Applications
+    </button>
+
+    <div id="applicationsList" class="applications-list">
+        <p>Click "View Applications" to load applications.</p>
+    </div>
+
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+
+        <h2>About Our System</h2>
+
+        <p>
+            The Loan Management System is a web-based project
+            designed to simplify the process of managing customers,
+            loan applications and EMI calculations.
+        </p>
+
+        <p>
+            This website is developed using HTML, CSS and JavaScript.
+            In the next stage of the project, C++ concepts such as
+            classes, inheritance, virtual functions and abstract
+            classes can be integrated into the loan processing system.
+        </p>
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Loan Management System
+        </p>
+
+        <p>
+            College Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
